@@ -54,18 +54,18 @@ class KitoblarController
     {
         if (isset($_POST['ok'])) {
             $id = $_POST['id'];
-            if($_FILES['img']['name']){
-                $img = explode('.',$_FILES['img']['name']);
-                $timg = ['jpg','png','svg'];
+            if ($_FILES['img']['name']) {
+                $img = explode('.', $_FILES['img']['name']);
+                $timg = ['jpg', 'png', 'svg'];
                 $end = end($img);
-                if(in_array($end,$timg)){
-                    $path = 'Images/'. date("Y-m-d_H-i-s.") . $end;
-                }else{
+                if (in_array($end, $timg)) {
+                    $path = 'Images/' . date("Y-m-d_H-i-s.") . $end;
+                } else {
                     header("location: /sedit");
                 }
-            }else{
+            } else {
                 $path = $_POST['rasm'];
-            }            
+            }
             $data = [
                 'name' => $_POST['name'],
                 'password' => $_POST['password'],
@@ -80,7 +80,7 @@ class KitoblarController
 
     public function editStudent()
     {
-        if(isset($_POST['ok'])){
+        if (isset($_POST['ok'])) {
             $id = $_POST['id'];
             $models = Kitoblar::show($id);
             return view('editStudent', 'Edit Students', $models);

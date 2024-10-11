@@ -67,6 +67,4 @@ class MuallifController
             header("location: /muallif");
         }
     }
-
-
 }

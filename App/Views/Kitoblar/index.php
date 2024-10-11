@@ -1,4 +1,4 @@
-<h1>Kitoblarni ichidamiz</h1>
+<h1>Kitoblar</h1>
 <form action="kcreate" method="post">
     <button type="submit" class="btn btn-success" style="margin-top: 15px;margin-bottom:20px;">Yangi Kitob</button>
 </form>
@@ -20,18 +20,18 @@
             <tr>
                 <th scope="row"><?= $model->id ?></th>
                 <td><?= $model->title ?></td>
-                <td><?=$model->description?></td>
-                <td><?=$model->janr_id?></td>
-                <td><?=$model->muallif_id?></td>
+                <td><?= $model->description ?></td>
+                <td><?= $model->janr_id ?></td>
+                <td><?= $model->muallif_id ?></td>
                 <td>
-                    <form action="/jedit">
-                        <input type="hidden" name="id" value="<?=$model->id?>">
+                    <form action="/kedit">
+                        <input type="hidden" name="id" value="<?= $model->id ?>">
                         <button type="submit" class="btn btn-danger"><i class="bi bi-pencil-fill"></i></button>
                     </form>
                 </td>
                 <td>
-                    <form action="/jdelete">
-                        <input type="hidden" name="id" value="<?=$model->id?>">
+                    <form action="/kdelete">
+                        <input type="hidden" name="id" value="<?= $model->id ?>">
                         <button type="button" class="btn btn-warning"><i class="bi bi-trash3"></i></button>
                     </form>
                 </td>

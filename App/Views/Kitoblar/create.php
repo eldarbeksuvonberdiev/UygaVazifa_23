@@ -28,5 +28,5 @@
         <option value="2">Two</option>
         <option value="3">Three</option>
     </select><br><br>
-    <button type="button" class="btn btn-success">Qo'shish</button>
+    <button type="submit" name="ok" class="btn btn-success">Qo'shish</button>
 </form>

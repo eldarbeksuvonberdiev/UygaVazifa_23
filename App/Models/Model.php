@@ -9,6 +9,7 @@ class Model extends Database
 {
 
     public static $table;
+
     public static function all()
     {
         $sql = "SELECT * FROM " . static::$table;
@@ -63,5 +64,22 @@ class Model extends Database
         $stmt = self::connect()->prepare($query);
 
         return $stmt->execute();
+    }
+
+    public static function attach($data){
+        $stringV = "";
+
+        foreach ($data as $key => $value) {
+            if($key == "password")
+                $value = md5($value);
+
+            $stringV = $stringV . "{$key}='{$value}' AND";
+        }
+        $cleanedS = rtrim($stringV,"AND ");
+
+        $db = self::connect();
+        $stmt = $db->query("SELECT * FROM " . static::$table . " WHERE {$cleanedS}");
+
+        return $stmt->fetchAll(PDO::FETCH_OBJ);
     }
 }

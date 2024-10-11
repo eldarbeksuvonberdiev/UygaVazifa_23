@@ -15,7 +15,6 @@ class JanrController
 
     public function createJanr()
     {
-        $models = Janr::all();
         return view('Janr/create', 'Janr Yaratish');
     }
 
@@ -24,7 +23,7 @@ class JanrController
         return view('notfound', '404 not found');
     }
 
-    
+
     public function create()
     {
         if (isset($_POST['ok'])) {
@@ -44,7 +43,7 @@ class JanrController
             header("location: /");
         }
     }
-    
+
     public function show()
     {
         if (isset($_POST['ok'])) {
@@ -53,7 +52,7 @@ class JanrController
             return view('show', 'Show', $models);
         }
     }
-    
+
     public function edit()
     {
         if (isset($_POST['ok'])) {
@@ -62,7 +61,7 @@ class JanrController
             return view('Janr/edit', 'Janr tahrirlash', $models);
         }
     }
-    
+
     public function update()
     {
         if (isset($_POST['ok'])) {
@@ -74,6 +73,4 @@ class JanrController
             header("location: /");
         }
     }
-
-
 }
