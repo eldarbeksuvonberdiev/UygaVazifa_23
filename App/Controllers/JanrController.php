@@ -12,6 +12,13 @@ class JanrController
         $models = Janr::all();
         return view('Janr/index', 'Home', $models);
     }
+
+    public function createJanr()
+    {
+        $models = Janr::all();
+        return view('Janr/create', 'Janr Yaratish');
+    }
+
     public function notfound()
     {
         return view('notfound', '404 not found');
@@ -52,7 +59,7 @@ class JanrController
         if (isset($_POST['ok'])) {
             $id = $_POST['id'];
             $models = Janr::show($id);
-            return view('edit', 'Show', $models);
+            return view('Janr/edit', 'Janr tahrirlash', $models);
         }
     }
     

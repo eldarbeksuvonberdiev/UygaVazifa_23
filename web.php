@@ -8,10 +8,10 @@ use App\Routes\Route;
 Route::get('/',[JanrController::class,'index']);
 Route::get('/notfound404',[JanrController::class,'notfound']);
 
-Route::post('/jcreate',[JanrController::class,'create']);
-Route::post('/jcreate',[JanrController::class,'create']);
+Route::post('/jcreate',[JanrController::class,'createJanr']);
+Route::post('/jncreate',[JanrController::class,'create']);
 Route::post('/jdelete',[JanrController::class,'delete']);
-Route::post('/jshow',[JanrController::class,'show']);
+// Route::post('/jshow',[JanrController::class,'show']);
 Route::post('/jedit',[JanrController::class,'edit']);
 Route::post('/jupdate',[JanrController::class,'update']);
 

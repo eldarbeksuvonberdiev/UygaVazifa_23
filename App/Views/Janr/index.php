@@ -20,15 +20,15 @@
                 <td><?= $model->name ?></td>
                 <td>Otto</td>
                 <td>
-                    <form action="/jedit">
+                    <form action="/jedit" method="post">
                         <input type="hidden" name="id" value="<?=$model->id?>">
-                        <button type="submit" class="btn btn-danger"><i class="bi bi-pencil-fill"></i></button>
+                        <button type="submit" name="ok"  class="btn btn-danger"><i class="bi bi-pencil-fill"></i></button>
                     </form>
                 </td>
                 <td>
-                    <form action="/jdelete">
+                    <form action="/jdelete" method="post">
                         <input type="hidden" name="id" value="<?=$model->id?>">
-                        <button type="button" class="btn btn-warning"><i class="bi bi-trash3"></i></button>
+                        <button type="submit" name="ok" class="btn btn-warning"><i class="bi bi-trash3"></i></button>
                     </form>
                 </td>
             </tr>
