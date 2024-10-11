@@ -19,8 +19,10 @@
         foreach ($models as $model) { ?>
             <tr>
                 <th scope="row"><?= $model->id ?></th>
-                <td><?= $model->name ?></td>
-                <td>Otto</td>
+                <td><?= $model->title ?></td>
+                <td><?=$model->description?></td>
+                <td><?=$model->janr_id?></td>
+                <td><?=$model->muallif_id?></td>
                 <td>
                     <form action="/jedit">
                         <input type="hidden" name="id" value="<?=$model->id?>">

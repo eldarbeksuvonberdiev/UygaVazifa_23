@@ -10,40 +10,17 @@ class KitoblarController
     public function index()
     {
         $models = Kitoblar::all();
-        return view('Kitoblar/index', 'Students', $models);
-    }
-
-    public function createStudent()
-    {
-        return view('createStudent', 'Students');
+        return view('Kitoblar/index', 'Kitoblar', $models);
     }
 
     public function create()
     {
-        if (isset($_POST['ok'])) {
-            $img = explode('.',$_FILES['img']['name']);
-            $timg = ['jpg','png','svg'];
-            $end = end($img);
-            if(in_array($end,$timg)){
-                $path = 'Images/'. date("Y-m-d_H-i-s.") . $end;
-                echo $path;
-            }else{
-                header("location: /tocreate");
-            }
+        return view('Kitoblar/create', "Yangi kitob qo'shish");
+    }
 
-            move_uploaded_file($_FILES['img']['tmp_name'],$path);
-            
-            $data = [
-                'name' => htmlspecialchars(strip_tags($_POST['name'])),
-                'password' => htmlspecialchars(strip_tags($_POST['password'])),
-                'tel' => htmlspecialchars(strip_tags($_POST['tel'])),
-                'manzil' => htmlspecialchars(strip_tags($_POST['manzil'])),
-                'img' => $path
-            ];
-            //  dd($data);
-            Kitoblar::create($data);
-            header("location: /student");
-        }
+    public function createKitob()
+    {
+        // return view('Kitoblar/create', 'Students');
     }
 
     public function delete()
