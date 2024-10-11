@@ -43,6 +43,10 @@ Route::post('/kupdate', [KitoblarController::class, 'update']);
 
 
 
-#Authentication'ga aloqador linklar
 
-Route::get('/login',[AuthenticationController::class,'login']);
+#Authentication'ga aloqador linklar
+Route::get('/login', [AuthenticationController::class, 'login']);
+Route::post('/login', [AuthenticationController::class, 'login']);
+Route::get('/login', [AuthenticationController::class, 'login']);
+Route::post('/login', [AuthenticationController::class, 'login']);
+Route::post('/login', [AuthenticationController::class, 'login']);
