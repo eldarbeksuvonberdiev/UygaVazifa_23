@@ -19,13 +19,12 @@ Route::post('/jupdate',[JanrController::class,'update']);
 
 #Muallif aloqador linklarJanrController
 Route::get('/muallif',[MuallifController::class,'index']);
-Route::get('/tocreate',[MuallifController::class,'createStudent']);
 
-Route::post('/mocreate',[MuallifController::class,'createStudent']);
-Route::post('/mcreate',[MuallifController::class,'create']);
+Route::post('/mcreate',[MuallifController::class,'createMuallif']);
+Route::post('/mncreate',[MuallifController::class,'create']);
 Route::post('/mdelete',[MuallifController::class,'delete']);
 Route::post('/mshow',[MuallifController::class,'show']);
-Route::post('/medit',[MuallifController::class,'editStudent']);
+Route::post('/medit',[MuallifController::class,'edit']);
 Route::post('/mupdate',[MuallifController::class,'update']);
 
 
