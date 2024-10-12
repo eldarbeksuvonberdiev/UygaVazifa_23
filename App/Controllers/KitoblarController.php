@@ -9,10 +9,11 @@ class KitoblarController
 {
     public function __construct()
     {
-        if(!Auth::user()->role == "admin"){
+        if(Auth::user()->role != "admin"){
             header("location: /notfound403");
+        }else{
+            header("location: /kitob");
         }
-        header("location: /kitob");
     }
 
     public function index()

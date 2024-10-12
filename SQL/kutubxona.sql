@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Oct 11, 2024 at 07:00 AM
+-- Generation Time: Oct 12, 2024 at 06:59 AM
 -- Server version: 8.0.39
 -- PHP Version: 8.2.12
 
@@ -39,7 +39,7 @@ CREATE TABLE `janr` (
 INSERT INTO `janr` (`id`, `name`) VALUES
 (1, 'Badiiy Adabiyoti'),
 (2, 'Fantaziya'),
-(6, 'Ilmiy fantastika');
+(6, 'Ilmiy fantastik');
 
 -- --------------------------------------------------------
 
@@ -81,11 +81,35 @@ CREATE TABLE `muallif` (
 --
 
 INSERT INTO `muallif` (`id`, `name`) VALUES
-(2, 'Abdulla Oripov'),
+(2, 'Abdulla Oripov1'),
 (3, 'Erkin Vohidov'),
 (5, 'Paulo Koelo'),
 (6, 'Nabijon Boqiy'),
 (7, 'George Orwell ');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users`
+--
+
+CREATE TABLE `users` (
+  `id` int NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `password` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `role` varchar(20) COLLATE utf8mb4_general_ci NOT NULL DEFAULT 'user',
+  `phone` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `img` varchar(255) COLLATE utf8mb4_general_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `name`, `email`, `password`, `role`, `phone`, `img`) VALUES
+(1, 'elbek', 'elbek@gmail.com', '202cb962ac59075b964b07152d234b70', 'admin', '+998942021651', 'none'),
+(2, 'Boltavoy', 'boltavoy@gmail.com', '123', 'user', '+49489465165', 'nonoe');
 
 --
 -- Indexes for dumped tables
@@ -110,6 +134,12 @@ ALTER TABLE `muallif`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -117,7 +147,7 @@ ALTER TABLE `muallif`
 -- AUTO_INCREMENT for table `janr`
 --
 ALTER TABLE `janr`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `kitoblar`
@@ -130,6 +160,12 @@ ALTER TABLE `kitoblar`
 --
 ALTER TABLE `muallif`
   MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
