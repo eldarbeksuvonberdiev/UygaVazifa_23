@@ -48,6 +48,6 @@ Route::post('/kupdate', [KitoblarController::class, 'update']);
 #Authentication'ga aloqador linklar
 Route::get('/login', [AuthenticationController::class, 'loginPage']);
 Route::get('/register', [AuthenticationController::class, 'RegisterPage']);
+Route::get('/logout', [AuthenticationController::class, 'logout']);
 
 Route::post('/login', [AuthenticationController::class, 'login']);
-Route::get('/logout', [AuthenticationController::class, 'logout']);

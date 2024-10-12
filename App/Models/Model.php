@@ -78,6 +78,6 @@ class Model extends Database
         $cleanedS = rtrim($stringV,"AND ");
         $db = self::connect();
         $stmt = $db->query("SELECT * FROM " . static::$table . " WHERE {$cleanedS}");
-        return $stmt->fetchAll(PDO::FETCH_OBJ);
+        return $stmt->fetch(PDO::FETCH_OBJ);
     }
 }

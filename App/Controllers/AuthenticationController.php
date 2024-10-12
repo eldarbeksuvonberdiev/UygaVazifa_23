@@ -26,9 +26,10 @@ class AuthenticationController{
         $user = Auth::attach($data);
         if($user){
             header("location: /");
+        }else{
+            header("location: /login");
         }
         
-        header("location: /login");
     }
 
     public function logout(){

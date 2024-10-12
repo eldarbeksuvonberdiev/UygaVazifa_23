@@ -109,7 +109,7 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `name`, `email`, `password`, `role`, `phone`, `img`) VALUES
 (1, 'elbek', 'elbek@gmail.com', '202cb962ac59075b964b07152d234b70', 'admin', '+998942021651', 'none'),
-(2, 'Boltavoy', 'boltavoy@gmail.com', '123', 'user', '+49489465165', 'nonoe');
+(2, 'Boltavoy', 'boltavoy@gmail.com', '202cb962ac59075b964b07152d234b70', 'user', '+49489465165', 'nonoe');
 
 --
 -- Indexes for dumped tables

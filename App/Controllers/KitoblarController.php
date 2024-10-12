@@ -8,11 +8,9 @@ use App\Models\Kitoblar;
 class KitoblarController
 {
     public function __construct()
-    {
+    {   
         if(Auth::user()->role != "admin"){
             header("location: /notfound403");
-        }else{
-            header("location: /kitob");
         }
     }
 
