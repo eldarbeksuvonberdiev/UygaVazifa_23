@@ -2,11 +2,17 @@
 
 namespace App\Controllers;
 
+use App\Helpers\Auth;
 use App\Models\Janr;
 
 class JanrController
 {
-
+    public function __construct()
+    {
+        if(!Auth::check()){
+            header("location:/login");
+        }
+    }
     public function index()
     {
         $models = Janr::all();
@@ -21,6 +27,11 @@ class JanrController
     public function notfound()
     {
         return view('notfound', '404 not found');
+    }
+
+    public function notAllowed()
+    {
+        return view('notallowed', '403 not found');
     }
 
 

@@ -73,13 +73,11 @@ class Model extends Database
             if($key == "password")
                 $value = md5($value);
 
-            $stringV = $stringV . "{$key}='{$value}' AND";
+            $stringV = $stringV . "{$key}='{$value}' AND ";
         }
         $cleanedS = rtrim($stringV,"AND ");
-
         $db = self::connect();
         $stmt = $db->query("SELECT * FROM " . static::$table . " WHERE {$cleanedS}");
-
         return $stmt->fetchAll(PDO::FETCH_OBJ);
     }
 }

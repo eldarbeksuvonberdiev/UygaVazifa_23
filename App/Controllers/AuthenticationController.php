@@ -1,14 +1,13 @@
 <?php
 namespace App\Controllers;
 
-use App\Helpers\Views;
-use App\Models\User;
+use App\Helpers\Auth;
 
 class AuthenticationController{
 
     public function __construct()
     {
-        //layout('loginMain');
+        layout('Authentication/login');
     }
 
     public function loginPage(){
@@ -24,20 +23,16 @@ class AuthenticationController{
             'email' => $_POST['email'],
             'password' => $_POST['password']
         ];
-
-        $user = User::attach($data);
-
+        $user = Auth::attach($data);
         if($user){
-            $_SESSION['auth'] = $user;
-            header('location:/');
-        }else{
-            $_SESSION['msg'] = "Email yoki login xato";
-            header('location: /login');
+            header("location: /");
         }
+        
+        header("location: /login");
     }
 
     public function logout(){
-        unset($_SESSION['auth']);
+        Auth::logout();
         header('location: /login');
     }
 }

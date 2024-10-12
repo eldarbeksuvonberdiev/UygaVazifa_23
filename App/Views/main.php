@@ -29,6 +29,16 @@
                             <a class="nav-link active" aria-current="page" href="/kitob">Kitoblar</a>
                         </li>
                     </ul>
+                    <!-- <form class="d-flex"> -->
+                        <?php
+                        if (!check()) { ?>
+                            <a href="/login"><button class="btn btn-outline-success me-3" type="submit">Login</button></a>
+                            <a href="/register"><button class="btn btn-outline-success me-3" type="submit">Register</button></a>
+                <?php   }else{ ?>
+                            <a href="/logout"><button class="btn btn-outline-success me-3" type="submit">Logout</button></a>
+                        <?php }
+                        ?>
+                    <!-- </form> -->
                 </div>
             </div>
         </nav>

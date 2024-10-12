@@ -2,10 +2,18 @@
 
 namespace App\Controllers;
 
+use App\Helpers\Auth;
 use App\Models\Kitoblar;
 
 class KitoblarController
 {
+    public function __construct()
+    {
+        if(!Auth::user()->role == "admin"){
+            header("location: /notfound403");
+        }
+        header("location: /kitob");
+    }
 
     public function index()
     {

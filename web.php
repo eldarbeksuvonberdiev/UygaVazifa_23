@@ -9,6 +9,7 @@ use App\Routes\Route;
 #Janr aloqador linklar
 Route::get('/', [JanrController::class, 'index']);
 Route::get('/notfound404', [JanrController::class, 'notfound']);
+Route::get('/notfound403', [JanrController::class, 'notAllowed']);
 
 Route::post('/jcreate', [JanrController::class, 'createJanr']);
 Route::post('/jncreate', [JanrController::class, 'create']);
@@ -19,7 +20,7 @@ Route::post('/jupdate', [JanrController::class, 'update']);
 
 
 
-#Muallif aloqador linklarJanrController
+#Muallif aloqador linklar
 Route::get('/muallif', [MuallifController::class, 'index']);
 
 Route::post('/mcreate', [MuallifController::class, 'createMuallif']);
@@ -31,7 +32,7 @@ Route::post('/mupdate', [MuallifController::class, 'update']);
 
 
 
-#kitoblar aloqador linklarJanrController
+#kitoblar aloqador linklar
 Route::get('/kitob', [KitoblarController::class, 'index']);
 
 Route::post('/kcreate', [KitoblarController::class, 'create']);
@@ -45,8 +46,8 @@ Route::post('/kupdate', [KitoblarController::class, 'update']);
 
 
 #Authentication'ga aloqador linklar
-Route::get('/login', [AuthenticationController::class, 'login']);
+Route::get('/login', [AuthenticationController::class, 'loginPage']);
+Route::get('/register', [AuthenticationController::class, 'RegisterPage']);
+
 Route::post('/login', [AuthenticationController::class, 'login']);
-Route::get('/login', [AuthenticationController::class, 'login']);
-Route::post('/login', [AuthenticationController::class, 'login']);
-Route::post('/login', [AuthenticationController::class, 'login']);
+Route::get('/logout', [AuthenticationController::class, 'logout']);

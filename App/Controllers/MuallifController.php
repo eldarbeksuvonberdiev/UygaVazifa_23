@@ -2,10 +2,17 @@
 
 namespace App\Controllers;
 
+use App\Helpers\Auth;
 use App\Models\Muallif;
 
 class MuallifController
 {
+    public function __construct()
+    {
+        if(!Auth::check()){
+            header("location:/login");
+        }
+    }
 
     public function index()
     {
