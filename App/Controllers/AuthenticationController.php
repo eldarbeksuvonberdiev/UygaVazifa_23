@@ -7,7 +7,7 @@ class AuthenticationController{
 
     public function __construct()
     {
-        layout('Authentication/login');
+        layout('loginMain');
     }
 
     public function loginPage(){
@@ -24,11 +24,12 @@ class AuthenticationController{
             'password' => $_POST['password']
         ];
         $user = Auth::attach($data);
-        if($user){
-            header("location: /");
-        }else{
-            header("location: /login");
-        }
+        // dd($user);
+        // if($user){
+        //     header("location: /");
+        // }else{
+        //     header("location: /login");
+        // }
         
     }
 

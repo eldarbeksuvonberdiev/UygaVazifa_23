@@ -22,8 +22,8 @@ if(!function_exists('view')){
 
 if(!function_exists('layout')){
 
-    function layout($view){
-        Views::$view = $view;
+    function layout($views){
+        Views::$view = $views;
     }
 }
 
