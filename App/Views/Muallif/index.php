@@ -7,7 +7,7 @@
         <tr>
             <th scope="col">ID</th>
             <th scope="col">Name</th>
-            <th scope="col">Shu Janrdagi kitoblar soni</th>
+            <th scope="col">Shu Muallif kitoblari soni</th>
             <th scope="col">Edit</th>
             <th scope="col">Delete</th>
         </tr>
@@ -18,7 +18,7 @@
             <tr>
                 <th scope="row"><?= $model->id ?></th>
                 <td><?= $model->name ?></td>
-                <td>Otto</td>
+                <td><?=$model->muallif?></td>
                 <td>
                     <form action="/medit" method="post">
                         <input type="hidden" name="id" value="<?=$model->id?>">

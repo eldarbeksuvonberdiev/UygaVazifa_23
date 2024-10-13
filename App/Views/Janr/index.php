@@ -18,7 +18,7 @@
             <tr>
                 <th scope="row"><?= $model->id ?></th>
                 <td><?= $model->name ?></td>
-                <td>Otto</td>
+                <td><?=$model->kitob?></td>
                 <td>
                     <form action="/jedit" method="post">
                         <input type="hidden" name="id" value="<?=$model->id?>">
