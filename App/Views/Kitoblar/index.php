@@ -21,8 +21,8 @@
                 <th scope="row"><?= $model->id ?></th>
                 <td><?= $model->title ?></td>
                 <td><?= $model->description ?></td>
-                <td><?= $model->janr_id ?></td>
-                <td><?= $model->muallif_id ?></td>
+                <td><?= $model->jname ?></td>
+                <td><?= $model->mname ?></td>
                 <td>
                     <form action="/kedit">
                         <input type="hidden" name="id" value="<?= $model->id ?>">
