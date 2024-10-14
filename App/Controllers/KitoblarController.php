@@ -22,12 +22,35 @@ class KitoblarController
 
     public function create()
     {
-        return view('Kitoblar/create', "Yangi kitob qo'shish");
+        if(isset($_POST['ok']) && !empty($_POST['title']) && !empty($_POST['desc']) && !empty($_POST['text'])){
+            $title = $_POST['title'];
+            $desc = $_POST['desc'];
+            $text = $_POST['text'];
+            $img = explode($_FILES['img']['name'],'.');
+            dd($img);
+            $typ = end($img);
+            // $types = ['jpg','svg','jpeg','png'];
+            $path = 'images/'.date("y-m-d_h-i-s.").$typ;
+            move_uploaded_file($_FILES['img']['tmp_name'],$path);
+            $data = [
+                "title" => $title,
+                "description" => $desc,
+                "text" => $text,
+                "img" => $path,
+                "janr_id" => $_POST['janr'],
+                "muallif_id" => $_POST['muallif']
+            ];
+            // Kitoblar::create($data);
+            // header("location: /kitob");
+
+        }
+        // return view('Kitoblar/create', "Yangi kitob qo'shish");
     }
 
     public function createKitob()
     {
-        // return view('Kitoblar/create', 'Students');
+        $models = Kitoblar::getJM();
+        return view('Kitoblar/create', "Yangi kitob qo'shish",$models);
     }
 
     public function delete()
@@ -35,7 +58,7 @@ class KitoblarController
         if (isset($_POST['ok'])) {
             $id = $_POST['id'];
             Kitoblar::delete($id);
-            header("location: /student");
+            header("location: /kitob");
         }
     }
 

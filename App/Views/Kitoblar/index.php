@@ -1,7 +1,5 @@
 <h1>Kitoblar</h1>
-<form action="kcreate" method="post">
-    <button type="submit" class="btn btn-success" style="margin-top: 15px;margin-bottom:20px;">Yangi Kitob</button>
-</form>
+    <a href="/kcreate"><button type="submit" class="btn btn-success" style="margin-top: 15px;margin-bottom:20px;">Yangi Kitob</button></a>
 <table class="table table-striped">
     <thead>
         <tr>
@@ -26,13 +24,13 @@
                 <td>
                     <form action="/kedit">
                         <input type="hidden" name="id" value="<?= $model->id ?>">
-                        <button type="submit" class="btn btn-danger"><i class="bi bi-pencil-fill"></i></button>
+                        <button type="submit" name="ok" class="btn btn-danger"><i class="bi bi-pencil-fill"></i></button>
                     </form>
                 </td>
                 <td>
-                    <form action="/kdelete">
+                    <form action="/kdelete" method="post">
                         <input type="hidden" name="id" value="<?= $model->id ?>">
-                        <button type="button" class="btn btn-warning"><i class="bi bi-trash3"></i></button>
+                        <button type="submit" name="ok" class="btn btn-warning"><i class="bi bi-trash3"></i></button>
                     </form>
                 </td>
             </tr>

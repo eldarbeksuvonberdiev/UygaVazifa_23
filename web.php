@@ -35,7 +35,7 @@ Route::post('/mupdate', [MuallifController::class, 'update']);
 #kitoblar aloqador linklar
 Route::get('/kitob', [KitoblarController::class, 'index']);
 
-Route::post('/kcreate', [KitoblarController::class, 'create']);
+Route::get('/kcreate', [KitoblarController::class, 'createKitob']);
 Route::post('/kcreate', [KitoblarController::class, 'create']);
 Route::post('/kdelete', [KitoblarController::class, 'delete']);
 Route::post('/kshow', [KitoblarController::class, 'show']);
